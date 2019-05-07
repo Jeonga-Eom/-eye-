@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.hanjin.R;
+
 public class TimeFragment extends Fragment {
 
     @Nullable

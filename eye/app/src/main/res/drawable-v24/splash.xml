@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--https://lx5475.github.io/2017/07/15/android-splash/-->
+<!--첫 로딩 화면-->
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--배경-->
+    <item
+        android:drawable="@color/colorAccent"/>
+    <!--로고-->
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/logo"/>
+    </item>
+</layer-list>
