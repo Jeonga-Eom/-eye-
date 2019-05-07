@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/time_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+        #오늘 착용한 시간 TextView
+        <TextView
+            android:id="@+id/TextView_time_title"
+            android:text="오늘 렌즈 착용한 시간"
+            android:textSize="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:padding="10dp"/>
+        #팝업 알림에 대한 설정 버튼
+        <Button
+            android:id="@+id/Button_pop_up_setting"
+            android:text="설정"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="10dp"/>
+        #렌즈를 이용한 시간 중 "시간" 단위 결과 (변화함)
+        <TextView
+            android:id="@+id/TextView_time_hours"
+            android:text="00"
+            android:textSize="24dp"
+            android:layout_width="27dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Button_pop_up_setting"
+            android:layout_margin="10dp"/>
+        #시간
+        <TextView
+            android:id="@+id/TextView_hours"
+            android:text="시간"
+            android:textSize="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Button_pop_up_setting"
+            android:layout_toRightOf="@+id/TextView_time_hours"
+            android:layout_margin="10dp"
+            />
+        #렌즈를 이용한 시간 중 "분" 단위 결과 (변화함)
+        <TextView
+            android:id="@+id/TextView_time_minutes"
+            android:text="00"
+            android:textSize="24dp"
+            android:layout_width="27dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Button_pop_up_setting"
+            android:layout_toRightOf="@+id/TextView_hours"
+            android:layout_margin="10dp"
+            />
+        #분
+        <TextView
+            android:id="@+id/TextView_minutes"
+            android:text="분"
+            android:textSize="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Button_pop_up_setting"
+            android:layout_toRightOf="@+id/TextView_time_minutes"
+            android:layout_margin="10dp"
+            />
+
+        <Button
+            android:id="@+id/time_start_button"
+            android:text="Start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Button_pop_up_setting"
+            android:layout_toLeftOf="@+id/time_reset_button"
+            android:padding="10dp"/>
+
+        <Button
+            android:id="@+id/time_reset_button"
+            android:text="Reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Button_pop_up_setting"
+            android:layout_alignParentRight="true"
+            android:padding="10dp"/>
+
+</RelativeLayout>
