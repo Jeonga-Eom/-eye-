@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/time_period_ScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/time_period_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:text="시간/설정"
+            android:textSize="32dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"/>
+        <fragment
+            android:id="@+id/timeFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="com.example.eye.TimeFragment"
+            />
+        <TableLayout
+            android:gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow>
+
+                <Button
+                    android:id="@+id/Button_time_period"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="시간/기간" />
+
+                <Button
+                    android:id="@+id/Button_information"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="INFORMATION" />
+
+                <Button
+                    android:id="@+id/Button_my_lens"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="MY LENS" />
+
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+</ScrollView>
