@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".KimActivity_next1">
+
+    <AbsoluteLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_x="0dp"
+        android:layout_y="2dp"
+        tools:context=".KimActivity_next1">
+
+        <View
+            android:layout_width="108dp"
+            android:layout_height="6dp"
+            android:layout_x="2dp"
+            android:layout_y="116dp"
+            android:background="#ffff0000" />
+
+        <View
+            android:layout_width="108dp"
+            android:layout_height="6dp"
+            android:layout_x="303dp"
+            android:layout_y="116dp"
+            android:background="#ffff0000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="122dp"
+            android:layout_y="94dp"
+            android:text="Lens kind"
+            android:textSize="40dp" />
+
+        <ListView
+            android:id="@+id/LensList"
+            android:layout_width="297dp"
+            android:layout_height="250dp"
+            android:layout_x="60dp"
+            android:layout_y="161dp" />
+
+
+        <Button
+            android:id="@+id/before2"
+            android:layout_width="107dp"
+            android:layout_height="96dp"
+            android:layout_x="82dp"
+            android:layout_y="451dp"
+            android:text="Before" />
+
+        <Button
+            android:id="@+id/next2"
+            android:layout_width="107dp"
+            android:layout_height="96dp"
+            android:layout_x="235dp"
+            android:layout_y="451dp"
+            android:text="Next" />
+
+    </AbsoluteLayout>
+</AbsoluteLayout>
