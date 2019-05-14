@@ -3,8 +3,6 @@ package com.example.eye;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.example.hanjin.R;
-
 public class YangActivity extends AppCompatActivity {
 
     @Override
