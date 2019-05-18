@@ -21,7 +21,10 @@
         </activity>
 
         <!--splash 이후에 실행되는 액티비티-->
-        <activity android:name="com.example.eye.MainActivity"></activity>>
+        <activity android:name="com.example.eye.MainActivity"></activity>
+        <activity android:name="com.example.eye.EomActivity"></activity>
+        <activity android:name="com.example.eye.YangActivity"></activity>
+        <activity android:name="com.example.eye.KimActivity"></activity>
     </application>
 
 </manifest>
