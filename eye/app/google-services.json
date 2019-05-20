@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "281268937945",
+    "firebase_url": "https://eyeappa-8d382.firebaseio.com",
+    "project_id": "eyeappa-8d382",
+    "storage_bucket": "eyeappa-8d382.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:281268937945:android:32d575e151d20e00",
+        "android_client_info": {
+          "package_name": "com.example.eye"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "281268937945-ikc742rc91tiphgl1ksidu2d7v62r661.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.eye",
+            "certificate_hash": "e013c5efa748420f4b55e223ce2625f529dca762"
+          }
+        },
+        {
+          "client_id": "281268937945-c26qig7rv31r5s9g3vq0oqhbbkge4eji.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqq2cguuYbGSAu5HoFoJpDfc0s81PNQpc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "281268937945-c26qig7rv31r5s9g3vq0oqhbbkge4eji.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

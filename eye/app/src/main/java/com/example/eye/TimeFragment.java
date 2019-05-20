@@ -35,7 +35,7 @@ public class TimeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstancestate) {
         ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_time, container, false);
 
-        //현재 시간을 얻기 위한 Calendar, 착용 시간을 표시할 TextView와 오류 해결을 위한 Content
+        //현재 시간을 얻기 위한 Calendar(timepickerdialog에 나타낼 때 이용), 착용 시간을 표시할 TextView와 오류 해결을 위한 Content
         final Calendar cal = Calendar.getInstance();
         hourText = rootView.findViewById(R.id.TextView_time_hours);
         minText = rootView.findViewById(R.id.TextView_time_minutes);
@@ -88,6 +88,7 @@ public class TimeFragment extends Fragment {
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
+                    //thread가 interrupt될 경우, 시간을 0으로 설정
                     hourText.setText(Integer.toString(0));
                     minText.setText(Integer.toString(0));
                 }
@@ -99,12 +100,12 @@ public class TimeFragment extends Fragment {
         //쉐어프리퍼런스
         sh_Pref = mContext.getSharedPreferences("Time", MODE_PRIVATE);
         toEdit = sh_Pref.edit();
-        //값 입력
+        //이용 시작 시간 값 입력
         if(type == 1) {
             toEdit.putInt("Start Time Hour", Hour);
             toEdit.putInt("Start Time Minute", Min);
         }
-        //값 제거
+        //이용 시작 시간 값 제거
         else {
             toEdit.remove("Start Time Hour");
             toEdit.remove("Start Time Minute");
@@ -115,11 +116,19 @@ public class TimeFragment extends Fragment {
     public void applySharedPreference() {
         sh_Pref = mContext.getSharedPreferences("Time", MODE_PRIVATE);
         if (sh_Pref != null && sh_Pref.contains("Start Time Hour") && sh_Pref.contains("Start Time Minute")) {
+            //현재 시간 정보(이용 시간을 나타낼때 사용)
             final Calendar cal = Calendar.getInstance();
             int currentHour = cal.get(Calendar.HOUR_OF_DAY);
             int currentMin = cal.get(Calendar.MINUTE);
-            hourText.setText(Integer.toString(currentHour - sh_Pref.getInt("Start Time Hour", 0)));
-            minText.setText(Integer.toString(currentMin - sh_Pref.getInt("Start Time Minute", 0)));
+            //현재 시간과 설정한 시간의 차로 이용 시간 set
+            if (currentMin < sh_Pref.getInt("Start Time Minute", 0)) {
+                hourText.setText(Integer.toString(currentHour - sh_Pref.getInt("Start Time Hour", 0) - 1));
+                minText.setText(Integer.toString(60 + currentMin - sh_Pref.getInt("Start Time Minute", 0)));
+            }
+            else {
+                hourText.setText(Integer.toString(currentHour - sh_Pref.getInt("Start Time Hour", 0)));
+                minText.setText(Integer.toString(currentMin - sh_Pref.getInt("Start Time Minute", 0)));
+            }
         }
     }
 }

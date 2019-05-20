@@ -24,6 +24,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:name="com.example.eye.TimeFragment"
+        />
+        <fragment
+            android:id="@+id/periodFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="com.example.eye.PeriodFragment"
             />
     </LinearLayout>
 
