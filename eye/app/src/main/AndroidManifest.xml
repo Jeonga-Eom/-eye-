@@ -9,34 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <!--시작 액티비티를 splash로 설정, theme 지정-->
-        <activity android:name="com.example.eye.SplashActivity"
+        <!-- 시작 액티비티를 splash로 설정, theme 지정 -->
+        <activity
+            android:name=".SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!--splash 이후에 실행되는 액티비티-->
-        <activity android:name="com.example.eye.MainActivity"></activity>
-        <activity android:name="com.example.eye.EomActivity"></activity>
-        <activity android:name="com.example.eye.YangActivity"></activity>
-        <activity android:name="com.example.eye.KimActivity"></activity>
-
-        <service
-            android:name=".FirebaseMessagingService">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
-            </intent-filter>
-        </service>
-        <service
-            android:name=".FirebaseInstanceIDService">
-            <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
-            </intent-filter>
-        </service>
+        </activity> <!-- splash 이후에 실행되는 액티비티 -->
+        <activity android:name=".MainActivity" />
+        <activity android:name=".EomActivity" />
+        <activity android:name=".YangActivity" />
+        <activity android:name=".KimActivity" />
+        <activity android:name=".AddLensActivity"></activity>
     </application>
+
 </manifest>

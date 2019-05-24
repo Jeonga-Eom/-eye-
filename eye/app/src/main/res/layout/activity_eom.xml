@@ -20,17 +20,44 @@
             android:paddingTop="10dp"
             android:paddingBottom="10dp"/>
         <fragment
-            android:id="@+id/timeFragment"
+            android:id="@+id/Fragment_time"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:name="com.example.eye.TimeFragment"
         />
-        <fragment
-            android:id="@+id/periodFragment"
+
+        <ListView
+            android:id="@+id/ListView_period"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:name="com.example.eye.PeriodFragment"
-            />
+            android:layout_height="match_parent"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Add" />
+
+            <Button
+                android:id="@+id/modify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Modify" />
+
+            <Button
+                android:id="@+id/delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Delete" />
+
+        </LinearLayout>
     </LinearLayout>
 
 </ScrollView>
