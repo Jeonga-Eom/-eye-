@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/time_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -74,24 +75,25 @@
 
         <ImageButton
             android:id="@+id/time_start_button"
-            android:layout_width="100dp"
+            android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_below="@+id/middleLine"
             android:layout_toLeftOf="@+id/time_reset_button"
-            android:src="@drawable/startbtn"
-            android:adjustViewBounds="true"
-            android:scaleType="centerCrop"
             android:background="@android:color/transparent"
-            />
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:layout_marginRight="25dp"
+            android:src="@drawable/startbtn" />
 
         <ImageButton
             android:id="@+id/time_reset_button"
-            android:layout_width="100dp"
+            android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_below="@+id/middleLine"
             android:layout_alignParentRight="true"
             android:src="@drawable/resetbtn"
-            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
             android:background="@android:color/transparent" />
 
 </RelativeLayout>

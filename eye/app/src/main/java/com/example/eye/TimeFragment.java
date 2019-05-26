@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import java.util.Calendar;
@@ -46,7 +47,7 @@ public class TimeFragment extends Fragment {
         thread.start();
 
         //Start 버튼
-        Button StartBtn = rootView.findViewById(R.id.time_start_button);
+        ImageButton StartBtn = rootView.findViewById(R.id.time_start_button);
         StartBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 TimePickerDialog dialog = new TimePickerDialog(getActivity(), new TimePickerDialog.OnTimeSetListener() {
@@ -66,7 +67,7 @@ public class TimeFragment extends Fragment {
             }
         });
         //Reset 버튼
-        Button ResetBtn = rootView.findViewById(R.id.time_reset_button);
+        ImageButton ResetBtn = rootView.findViewById(R.id.time_reset_button);
         ResetBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //저장된 설정 시간 지우기, thread 종료

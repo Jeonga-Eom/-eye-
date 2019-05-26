@@ -14,39 +14,47 @@
         <TextView
             android:id="@+id/TextView_Eom_Title"
             android:text="@string/time_period"
-            android:textSize="32dp"
+            android:textSize="40dp"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="10dp"
+            android:paddingTop="20dp"
             android:paddingBottom="30dp"/>
+        <View
+            android:id="@+id/eom_first_line"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#E4E4E4"
+            android:layout_below="@+id/TextView_Eom_Title"/>
 
         <fragment
             android:id="@+id/Fragment_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:name="com.example.eye.TimeFragment"
-            android:layout_below="@+id/TextView_Eom_Title"
+            android:layout_below="@+id/eom_first_line"
         />
         <View
+            android:id="@+id/eom_second_line"
             android:layout_width="match_parent"
-            android:layout_height="6dp"
-            android:background="#FFCCCC"/>
+            android:layout_height="3dp"
+            android:background="#E4E4E4"
+            android:layout_below="@+id/Fragment_time"/>
         <TextView
             android:id="@+id/TextView_period_title"
             android:text="PERIOD"
             android:textSize="24dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/Fragment_time"
-            android:padding="10dp"/>
+            android:layout_below="@+id/eom_second_line"
+            android:padding="20dp"/>
 
         <ListView
             android:id="@+id/ListView_period"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/TextView_period_title"
-            android:paddingTop="20dp"></ListView>
+            android:paddingTop="10dp"></ListView>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -54,12 +62,16 @@
             android:orientation="horizontal"
             android:layout_below="@+id/ListView_period">
 
-            <Button
+            <ImageButton
                 android:id="@+id/add"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_weight="1"
-                android:text="Add" />
+                android:src="@drawable/addbtn"
+                android:background="@android:color/transparent"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:layout_margin="25dp" />
         </LinearLayout>
     </RelativeLayout>
 

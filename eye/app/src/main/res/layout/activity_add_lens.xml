@@ -117,21 +117,30 @@
             android:checked="true"
             android:text="6개월"/>
     </RadioGroup>
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <Button
+        <ImgaeButton
             android:id="@+id/Button_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="확인"
-            android:layout_toLeftOf="@+id/Button_cancel"/>
-        <Button
+            android:src="@drawable/okbtn"
+            android:background="@android:color/transparent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:layout_alignParentRight="true"
+            android:layout_weight="1"
+            />
+        <ImageButton
             android:id="@+id/Button_cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="취소"
-            android:layout_alignParentRight="true"/>
-    </RelativeLayout>
+            android:src="@drawable/cancelbtn"
+            android:background="@android:color/transparent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:layout_alignParentRight="true"
+            android:layout_weight="1"/>
+    </LinearLayout>
 </LinearLayout>
 </ScrollView>

@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
@@ -37,7 +38,7 @@ public class EomActivity extends AppCompatActivity implements ListViewAdapter.Li
         setListView();
 
         //렌즈 add버튼
-        Button btnAdd = findViewById(R.id.add);
+        ImageButton btnAdd = findViewById(R.id.add);
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

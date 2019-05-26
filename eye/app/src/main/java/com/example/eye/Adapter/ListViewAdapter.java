@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,7 +53,7 @@ public class ListViewAdapter extends BaseAdapter implements View.OnClickListener
         TextView name = (TextView) convertView.findViewById(R.id.TextView_lens_name) ;
         TextView left = (TextView) convertView.findViewById(R.id.TextView_LeftInfo) ;
         TextView right = (TextView) convertView.findViewById(R.id.TextView_RightInfo) ;
-        Button delete = (Button) convertView.findViewById(R.id.delete);
+        ImageButton delete = (ImageButton) convertView.findViewById(R.id.delete);
 
 
         ListVO listViewItem = listVO.get(position);
