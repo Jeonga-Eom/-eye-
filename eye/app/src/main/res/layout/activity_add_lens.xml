@@ -19,7 +19,7 @@
         android:id="@+id/EditText_lens_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:name="렌즈"
+        android:hint="렌즈이름"
         android:padding="10dp"
         />
     <TextView
@@ -120,17 +120,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <ImgaeButton
+        <ImageButton
             android:id="@+id/Button_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/okbtn"
-            android:background="@android:color/transparent"
             android:adjustViewBounds="true"
-            android:scaleType="fitXY"
-            android:layout_alignParentRight="true"
-            android:layout_weight="1"
-            />
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside"
+            android:src="@drawable/okbtn"
+            android:layout_weight="1"/>
         <ImageButton
             android:id="@+id/Button_cancel"
             android:layout_width="wrap_content"
@@ -138,8 +136,7 @@
             android:src="@drawable/cancelbtn"
             android:background="@android:color/transparent"
             android:adjustViewBounds="true"
-            android:scaleType="fitXY"
-            android:layout_alignParentRight="true"
+            android:scaleType="centerInside"
             android:layout_weight="1"/>
     </LinearLayout>
 </LinearLayout>

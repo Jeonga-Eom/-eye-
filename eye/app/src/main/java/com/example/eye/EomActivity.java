@@ -162,7 +162,7 @@ public class EomActivity extends AppCompatActivity implements ListViewAdapter.Li
             return;
         }
 
-        int totalHeight = 0;
+        int totalHeight = 1;
         int desiredWidth = View.MeasureSpec.makeMeasureSpec(listView.getWidth(), View.MeasureSpec.AT_MOST);
 
         for (int i = 0; i < listAdapter.getCount(); i++) {
