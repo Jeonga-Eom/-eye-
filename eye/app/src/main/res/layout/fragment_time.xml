@@ -3,11 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/time_layout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:padding="10dp">
         #오늘 착용한 시간 TextView
         <TextView
             android:id="@+id/TextView_time_title"
-            android:text="오늘 렌즈 착용한 시간"
+            android:text="TIME"
             android:textSize="24dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -21,6 +22,13 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:padding="10dp"/>
+        <TextView
+            android:id="@+id/middleLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" "
+            android:textSize="15dp"
+            android:layout_below="@+id/TextView_time_title"/>
         #렌즈를 이용한 시간 중 "시간" 단위 결과 (변화함)
         <TextView
             android:id="@+id/TextView_time_hours"
@@ -28,7 +36,7 @@
             android:textSize="24dp"
             android:layout_width="27dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/Button_pop_up_setting"
+            android:layout_below="@+id/middleLine"
             android:layout_margin="10dp"/>
         #시간
         <TextView
@@ -37,18 +45,18 @@
             android:textSize="24dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/Button_pop_up_setting"
+            android:layout_below="@+id/middleLine"
             android:layout_toRightOf="@+id/TextView_time_hours"
             android:layout_margin="10dp"
             />
-        #렌즈를 이용한 시간 중 "분" 단위 결과 (변화함)
+        #렌즈를 이용한 시간 중 "분" 단위 결과
         <TextView
             android:id="@+id/TextView_time_minutes"
             android:text="00"
             android:textSize="24dp"
             android:layout_width="27dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/Button_pop_up_setting"
+            android:layout_below="@+id/middleLine"
             android:layout_toRightOf="@+id/TextView_hours"
             android:layout_margin="10dp"
             />
@@ -59,27 +67,31 @@
             android:textSize="24dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/Button_pop_up_setting"
+            android:layout_below="@+id/middleLine"
             android:layout_toRightOf="@+id/TextView_time_minutes"
             android:layout_margin="10dp"
             />
 
-        <Button
+        <ImageButton
             android:id="@+id/time_start_button"
-            android:text="Start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/Button_pop_up_setting"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/middleLine"
             android:layout_toLeftOf="@+id/time_reset_button"
-            android:padding="10dp"/>
+            android:src="@drawable/startbtn"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:background="@android:color/transparent"
+            />
 
-        <Button
+        <ImageButton
             android:id="@+id/time_reset_button"
-            android:text="Reset"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/Button_pop_up_setting"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/middleLine"
             android:layout_alignParentRight="true"
-            android:padding="10dp"/>
+            android:src="@drawable/resetbtn"
+            android:scaleType="centerCrop"
+            android:background="@android:color/transparent" />
 
 </RelativeLayout>

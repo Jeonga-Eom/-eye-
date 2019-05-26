@@ -1,16 +1,25 @@
 package com.example.eye;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.eye.ListVO.ListVO;
+
+import java.util.ArrayList;
 
 public class AddLensActivity extends AppCompatActivity {
     EditText name;
@@ -45,18 +54,18 @@ public class AddLensActivity extends AppCompatActivity {
 
         add.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent();
+                Intent intent = getIntent();
                 Bundle bundle = new Bundle();
                 //이름
-                bundle.putInt("type", 1);
                 bundle.putString("lens_name", name.getText().toString());
+                //Month는 0부터 시작
                 //왼쪽 정보
                 bundle.putInt("left_year", left.getYear());
-                bundle.putInt("left_month", left.getMonth());
+                bundle.putInt("left_month", left.getMonth() + 1);
                 bundle.putInt("left_day", left.getDayOfMonth());
                 //오른쪽 정보
                 bundle.putInt("right_year", right.getYear());
-                bundle.putInt("right_month", right.getMonth());
+                bundle.putInt("right_month", right.getMonth() + 1);
                 bundle.putInt("right_day", right.getDayOfMonth());
                 //왼쪽 교체 주기 정보
                 int radio = group1.getCheckedRadioButtonId();
@@ -80,7 +89,7 @@ public class AddLensActivity extends AppCompatActivity {
                     bundle.putInt("period2", 180);
                 intent.putExtras(bundle);
                 //start activity
-                setResult(RESULT_OK, intent);
+                setResult(Activity.RESULT_OK, intent);
                 finish();
             }
         });

@@ -1,82 +1,178 @@
 package com.example.eye;
 
-import android.app.Activity;
-import android.app.ListActivity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import com.example.eye.Adapter.ListViewAdapter;
 
-public class EomActivity extends AppCompatActivity {
+
+public class EomActivity extends AppCompatActivity implements ListViewAdapter.ListBtnClickListener {
     //https://yoo-hyeok.tistory.com/53
-    //private Context mContext;
+    private Context mContext;
     SharedPreferences sh_Pref;
     SharedPreferences.Editor toEdit;
 
-    //https://recipes4dev.tistory.com/48추가 지우기 등
-    ArrayList<String> Name = new ArrayList<String>();
-    ArrayList<Integer> LeftDate = new ArrayList<Integer>();
-    ArrayList<Integer> RightDate = new ArrayList<Integer>();
-    ArrayList<Integer> LeftPeriod = new ArrayList<Integer>();
-    ArrayList<Integer> RightPeriod = new ArrayList<Integer>();
+    private ListView listview ;
+    private ListViewAdapter adapter;
 
-    private ListView listView;
+    //https://recipes4dev.tistory.com/48추가 지우기 등
+    String name;
+    Integer LeftDate, RightDate, LeftPeriod, RightPeriod;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eom);
-        //mContext = getActivity();
+        mContext = getApplicationContext();
 
-        listView =(ListView)findViewById(R.id.ListView_period);
+        setListView();
 
-        //데이터 초기화
-
-
-        //simpleAdapter 생성
-        //SimpleAdapter simpleAdapter = new SimpleAdapter(this,Data,android.R.layout.simple_list_item_2,new String[]{"school","name"},new int[]{android.R.id.text1,android.R.id.text2});
-        //listView.setAdapter(simpleAdapter);
-
+        //렌즈 add버튼
+        Button btnAdd = findViewById(R.id.add);
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(EomActivity.this, AddLensActivity.class);
+                startActivityForResult(intent, 1);
+            }
+        });
+        //listview item
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView parent, View v, int position, long id) {
+            }
+        }) ;
     }
-    /*
-    public void sharedPrefernces(int type) {
+    //listview의 삭제 버튼
+    @Override
+    public void onListBtnClick(int position) {
+        sharedPreferences(-1, position);
+    }
+
+    //listView 출력 function
+    protected void setListView() {
+        //list view
+        adapter = new ListViewAdapter(this, R.layout.custom_listview, this);
+        sh_Pref = mContext.getSharedPreferences("Period", MODE_PRIVATE);
+        //adapter를 통한 값 전달
+        for(int i=0; i <= sh_Pref.getInt("number", 0); i++){
+            String Name;
+            Integer LeftDate, RightDate, LeftPeriod, RightPeriod;
+            String s = "lens_name_" + i;
+            if(sh_Pref.contains(s)) {
+                Name = sh_Pref.getString(s, null);
+                s = "left_date_" + i;
+                LeftDate = sh_Pref.getInt(s, 0);
+                s = "right_date_" + i;
+                RightDate = sh_Pref.getInt(s, 0);
+                s = "left_period_" + i;
+                LeftPeriod = sh_Pref.getInt(s, 0);
+                s = "right_period_" + i;
+                RightPeriod = sh_Pref.getInt(s, 0);
+                adapter.addVO(Name, LeftDate, RightDate, LeftPeriod, RightPeriod);
+            }
+        }
+        listview = (ListView) findViewById(R.id.ListView_period);
+        listview.setAdapter(adapter);
+        setListViewHeightBasedOnChildren(listview);
+        adapter.notifyDataSetChanged();
+    }
+
+    //추가하는 렌즈에 대한 데이터를 Result로 받고 저장
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK) {
+            Bundle bundle = data.getExtras();
+
+            name = bundle.getString("lens_name");
+            LeftDate = bundle.getInt("left_year") * 10000 + bundle.getInt("left_month") * 100 + bundle.getInt("left_day");
+            RightDate = bundle.getInt("right_year") * 10000 + bundle.getInt("right_month") * 100 + bundle.getInt("right_day");
+            LeftPeriod = bundle.getInt("period1");
+            RightPeriod = bundle.getInt("period2");
+            sharedPreferences(1, 0);
+        }
+    }
+
+    //sharedPreferences에 저장 및 삭제
+    public void sharedPreferences(int type, int n) {
         //쉐어프리퍼런스
-        sh_Pref = getSharedPreferences("Lens", MODE_PRIVATE);
+        sh_Pref = mContext.getSharedPreferences("Period", MODE_PRIVATE);
         toEdit = sh_Pref.edit();
-        //이용 시작 시간 값 입력
+        //렌즈 기간 정보 저장
         if(type == 1) {
-            toEdit.putInt("Start Time Hour", Hour);
-            toEdit.putInt("Start Time Minute", Min);
+            int i = sh_Pref.getInt("number", -1) + 1;
+
+            toEdit.putInt("number", i);
+            String str = "lens_name_" + i; toEdit.putString(str, name);
+            str = "left_date_" + i; toEdit.putInt(str, LeftDate);
+            str = "right_date_" + i; toEdit.putInt(str, RightDate);
+            str = "left_period_" + i; toEdit.putInt(str, LeftPeriod);
+            str = "right_period_" + i; toEdit.putInt(str, RightPeriod);
         }
-        //이용 시작 시간 값 제거
         else {
-            toEdit.remove("Start Time Hour");
-            toEdit.remove("Start Time Minute");
+            if(sh_Pref.getInt("number", -1) == n)
+                toEdit.putInt("number", n - 1);
+            String str = "lens_name_" + n; toEdit.remove(str);
+            str = "left_date_" + n; toEdit.remove(str);
+            str = "right_date_" + n; toEdit.remove(str);
+            str = "left_period_" + n; toEdit.remove(str);
+            str = "right_period_" + n; toEdit.remove(str);
         }
+        toEdit.commit();
+        cleanup();
+        setListView();
+    }
+
+    private void cleanup() {
+        //쉐어프리퍼런스
+        sh_Pref = mContext.getSharedPreferences("Period", MODE_PRIVATE);
+        toEdit = sh_Pref.edit();
+
+        int i = 0, j = 0;
+        while(i <= sh_Pref.getInt("number", -1)) {
+            String a = "lens_name_" + i;
+            if (sh_Pref.contains(a)) {
+                String b = "lens_name_" + j;
+                String name = sh_Pref.getString(a, null);
+                toEdit.putString(b, name);
+                j++;
+            }
+            i++;
+        }
+        toEdit.putInt("number", j - 1);
         toEdit.commit();
     }
 
-    public void applySharedPreference() {
-        sh_Pref = getSharedPreferences("Time", MODE_PRIVATE);
-        if (sh_Pref != null && sh_Pref.contains("Start Time Hour") && sh_Pref.contains("Start Time Minute")) {
-            //현재 시간 정보(이용 시간을 나타낼때 사용)
-            final Calendar cal = Calendar.getInstance();
-            int currentHour = cal.get(Calendar.HOUR_OF_DAY);
-            int currentMin = cal.get(Calendar.MINUTE);
-            //현재 시간과 설정한 시간의 차로 이용 시간 set
-            if (currentMin < sh_Pref.getInt("Start Time Minute", 0)) {
-                hourText.setText(Integer.toString(currentHour - sh_Pref.getInt("Start Time Hour", 0) - 1));
-                minText.setText(Integer.toString(60 + currentMin - sh_Pref.getInt("Start Time Minute", 0)));
-            }
-            else {
-                hourText.setText(Integer.toString(currentHour - sh_Pref.getInt("Start Time Hour", 0)));
-                minText.setText(Integer.toString(currentMin - sh_Pref.getInt("Start Time Minute", 0)));
-            }
+
+    //ScrollView에서 ListView의 height 조절
+    public static void setListViewHeightBasedOnChildren(ListView listView) {
+        ListAdapter listAdapter = listView.getAdapter();
+        if (listAdapter == null) {
+            // pre-condition
+            return;
         }
-    }*/
+
+        int totalHeight = 0;
+        int desiredWidth = View.MeasureSpec.makeMeasureSpec(listView.getWidth(), View.MeasureSpec.AT_MOST);
+
+        for (int i = 0; i < listAdapter.getCount(); i++) {
+            View listItem = listAdapter.getView(i, null, listView);
+            listItem.measure(desiredWidth, View.MeasureSpec.UNSPECIFIED);
+            totalHeight += listItem.getMeasuredHeight();
+        }
+
+        ViewGroup.LayoutParams params = listView.getLayoutParams();
+        params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
+        listView.setLayoutParams(params);
+        listView.requestLayout();
+    }
 }

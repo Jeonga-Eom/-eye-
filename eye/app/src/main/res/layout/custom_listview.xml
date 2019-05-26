@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:layout_margin="5dp"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_marginLeft="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/TextView_lens_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lens Name"
+            android:padding="5dp"
+            />
+
+        <TextView
+            android:id="@+id/TextView_LeftInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Left Information"
+            android:layout_below="@+id/TextView_lens_name"
+            android:paddingLeft="5dp"
+            android:paddingBottom="2dp"
+            />
+
+        <TextView
+            android:id="@+id/TextView_RightInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Right Information"
+            android:layout_below="@+id/TextView_LeftInfo"
+            android:paddingLeft="5dp"
+            android:paddingBottom="2dp"
+            />
+
+        <ImageButton
+            android:id="@+id/delete"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/deletebtn"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:background="@android:color/transparent"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

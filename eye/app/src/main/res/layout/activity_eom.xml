@@ -5,36 +5,54 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/time_period_Layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/TextView_Eom_Title"
             android:text="@string/time_period"
             android:textSize="32dp"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
-            android:paddingBottom="10dp"/>
+            android:paddingBottom="30dp"/>
+
         <fragment
             android:id="@+id/Fragment_time"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:name="com.example.eye.TimeFragment"
+            android:layout_below="@+id/TextView_Eom_Title"
         />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:background="#FFCCCC"/>
+        <TextView
+            android:id="@+id/TextView_period_title"
+            android:text="PERIOD"
+            android:textSize="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Fragment_time"
+            android:padding="10dp"/>
 
         <ListView
             android:id="@+id/ListView_period"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TextView_period_title"
+            android:paddingTop="20dp"></ListView>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_below="@+id/ListView_period">
 
             <Button
                 android:id="@+id/add"
@@ -42,22 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Add" />
-
-            <Button
-                android:id="@+id/modify"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Modify" />
-
-            <Button
-                android:id="@+id/delete"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Delete" />
-
         </LinearLayout>
-    </LinearLayout>
+    </RelativeLayout>
 
 </ScrollView>
