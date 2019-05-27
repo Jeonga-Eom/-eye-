@@ -17,6 +17,12 @@
         android:layout_height="wrap_content"
         android:paddingTop="20dp"
         android:paddingBottom="30dp"/>
+    <View
+        android:id="@+id/yang_first_line"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#E4E4E4"
+        android:padding="10dp"/>
 
     <ExpandableListView
         android:id="@+id/expandableListView1"
