@@ -3,4 +3,98 @@
     <string name="time_period">Time/Period</string>
     <string name="notification_channel_id">"notification_channel_id"</string>
     <string name="notification_channel_name">"notification_channel_name"</string>
+    
+    <!--Start of YangActivity-->
+    <string name="text_kind">소프트, 하드, 드림렌즈의 차이점은?</string>
+    <string name="text_period">렌즈, 일회용과 장기용의 차이점은?</string>
+    <string name="text_dia">나에게 어울리는 그래픽 직경은?</string>
+    <string name="text_buy">어디서 살 수 있나요?</string>
+    <string name="text_how">쉽게 끼고 빼는 방법이 있나요?</string>
+    <string name="text_status">렌즈의 상태가 안좋아요!</string>
+    <string name="text_go">렌즈를 끼고 물놀이/사우나/수면</string>
+    <string name="text_limit">권장 착용시간이 어떻게 되나요?</string>
+    <string name="text_clean">올바른 세척방법은?</string>
+    <string name="text_tear">인공눈물, 일회용과 다회용의 차이점은?</string>
+
+    <string-array name="string_array_kind">
+        <item>[소프트렌즈]는 초기 착용감이 편하며 산소투과율이 높은 실리콘 하이드로겔렌즈의 개발로 부작용이 많이 줄어들었습니다.
+        입문자에게 적합합니다. 컬러와 투명이 있는데, [컬러렌즈]는 두께가 두껍고 산소투과율이 낮아 부작용의 위험성이 훨씬 큽니다.
+        착용감은 큰 차이 없습니다.</item>
+        <item>[하드렌즈]는 익숙해질 때까지 적응기간이 필요합니다. 표면이 딱딱하여 시력교정 효과가 높고
+            산소투과도가 소프트렌즈보다 높아 부작용이 적습니다.</item>
+        <item>[드림렌즈]는 밤에 끼고 자면, 낮에는 렌즈 없이도 시력을 확보할 수 있게 해주는 렌즈입니다.
+            각막의 모양을 변형시키는 특수한 렌즈로 비교적 비싸고 적응이 어려울 수 있습니다.</item>
+    </string-array>
+
+    <string-array name="string_array_period">
+        <item>[일회용 렌즈]는 매일 착용하지 않고 중요한 날이나 운동을 즐기는 특별한 날 끼는 사람들에게 적합합니다.
+            세척이나 관리가 필요없어 한번 사용한 뒤 버리면 돼 매우 간편합니다.</item>
+        <item>[장기용 렌즈]는 착용횟수와 상관없이 제품을 개봉한 날 부터 주기를 계산하면 됩니다.
+            주기가 긴 렌즈일수록 두꺼운 특징이 있으며 함수율이 다르므로 권장 착용기간을 꼭 지켜서 착용합니다.</item>
+        <item>렌즈 케이스에 표기된 유통기한 안에 사용하셔야합니다.</item>
+    </string-array>
+
+    <string-array name="string_array_dia">
+        <item>사람의 홍채직경은 보통 11-12mm입니다.</item>
+        <item>그래픽 직경과 전체 직경은 다릅니다. 테두리에 약간의 투명한 부분이 포함된 길이가 전체 직경입니다.</item>
+        <item>자연스러움(12.8mm-13,4mm), 튀는 렌즈(13.6mm-14.0mm), 더 튀는 렌즈(14.0mm이상)</item>
+    </string-array>
+
+    <string-array name="string_array_buy">
+        <item>[가까운 안경점]에 가시면 시력검사와 적합한 제품을 추천받을 수 있습니다.</item>
+        <item>[오프라인 렌즈 스토어]에서도 제품을 구매할 수 있습니다.</item>
+        <item>착용 중인 안경만 가져가도 내 시력에 맞는 제품을 구매할 수 있습니다.
+            새로운 제품을 개봉했을 경우 반드시 세척한 후 사용해주세요.</item>
+    </string-array>
+
+    <string-array name="string_array_wear">
+        <item>[착용 전]손을 깨끗하게 씻고 손가락위에 렌즈를 얹혀놓습니다. 뒤집히지 않았는지 확인합니다. </item>
+        <item>눈 아래꺼풀을 벌려주고 아래쪽 손으로는 눈 위 눈꺼풀을 들어줍니다.
+            손가락 위에 올라가있는 렌즈를 똑바로 보고 눈동자에 살짝 올려준 뒤, 렌즈가 눈을 감고 자리를 잡을 수 있도록 합니다. </item>
+        <item>[렌즈 빼기]먼저 화장을 지웁니다. 손을 깨끗하게 씻고 눈꺼풀을 위아래로 깐 뒤, 손톱이 아닌 집게손가락으로 집습니다. </item>
+    </string-array>
+
+    <string-array name="string_array_status">
+        <item>[뒤집힌 렌즈]를 꼈을 경우, 매우 아파서 견디지 못하거나 시야의 가장자리 부분이 휘어보입니다.
+            눈 건강에 안좋으니 즉시 빼주세요. 착용 전에 렌즈를 빛에 비추고 아래에서 바라보면 렌즈가 뒤집힌 걸 확인할 수 있습니다. </item>
+        <item>[찢어진 렌즈]를 꼈을 경우, 매우 아파서 견디지 못하고 눈이 충혈됩니다.
+            눈 건강에 안좋으니 즉시 빼주세요.</item>
+        <item>렌즈가 쪼그라들기도 합니다. 수분을 빼앗겼거나 오래 꼈을 경우입니다.
+            권장 착용시간을 지켜주시고 식염수에 충분히 담궈주세요.</item>
+    </string-array>
+
+    <string-array name="string_array_go">
+        <item> 렌즈를 끼고 [물놀이]를 하면 안됩니다. 소독성분이 렌즈에 흡수되어 눈을 자극할 수 있으며
+            오랜시간 물에 노출되면 렌즈가 변형될 수 있습니다. 부득이한경우 일회용을 착용하거나 물안경을 낍니다. </item>
+        <item> [찜질방]이나 [사우나] 이용 시에도 권장하지 않습니다.</item>
+        <item> 렌즈를 끼고 [자면] 절대 안됩니다. 각막에 산소 공급이 어려워저 손상의 위험이 있고,
+            렌즈가 건조하여 안구건조증의 위험을 높입니다.</item>
+    </string-array>
+
+    <string-array name="string_array_limit">
+        <item>권장 착용시간은 [최대 8시간 이내]입니다.</item>
+        <item>안구 건조증, 단백질 및 이물질 침착, 산소 공급량 감소 방지를 위해 신경써주세요.</item>
+        <item>음주, 수면부족, 피로한 날, 황사가 심한 날에는 착용을 자제해주세요.</item>
+    </string-array>
+
+    <string-array name="string_array_clean">
+        <item>[다목적 관리용액]은 일명 리뉴액이라고 불립니다. 렌즈의 세척과 보관이 모두 가능하여 많이 사용합니다.
+            뚜껑은 꼭 닫아 서늘한 실온에서 보관하고 렌즈케이스 속 용액은 재사용하지 말고 주기적으로 교체합니다.</item>
+        <item>렌즈에 용액을 떨어뜨려 부드럽게 문질러 세척하고, 2/3 정도 케이스에 담아 렌즈를 깨끗하게 보관합니다.</item>
+        <item>[멸균 생리 식염수]는 단순 헹굼만 가능합니다. 개봉 후 일주일 이내에 사용해주세요.</item>
+        <item>[습윤액]은 렌즈 표면에 떨어뜨려 보습과 윤활을 높이는 제품으로, 눈에 직접 점안은 금지합니다.
+        렌즈에 1-2방울 떨어뜨려서 사용합니다.</item>
+        <item>렌즈를 케이스에 넣을 때, 곡선 부분이 위로 오게 넣어주세요.</item>
+        <item>손의 위생상태와 손톱관리에 신경써주세요. 케이스는 일주일에 한 번 정도 닦고, 3개월마다 교체해주세요.</item>
+    </string-array>
+
+    <string-array name="string_array_tear">
+        <item>대부분의 [다회용 인공눈물]은 렌즈 착용 중엔 사용 금지입니다. 렌즈의 변형,
+            각막 손상 등 부정적인 영향을 줄 수 있어서 렌즈 착용 중 사용 가능 여부를 확인해야합니다.</item>
+        <item>무방부제 [일회용 인공눈물]은 렌즈 착용 중에도 사용할 수 있습니다.
+            하지만 렌즈와 눈을 밀착 시켜 각막에 부담이 될 수 있으니 과도한 사용은 하지않습니다.</item>
+    </string-array>
+<!--End of YangActivity-->
+    
 </resources>
+   
