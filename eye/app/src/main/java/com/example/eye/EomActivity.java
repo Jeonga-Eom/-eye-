@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -53,6 +52,7 @@ public class EomActivity extends AppCompatActivity implements ListViewAdapter.Li
             }
         }) ;
     }
+
     //listview의 삭제 버튼
     @Override
     public void onListBtnClick(int position) {

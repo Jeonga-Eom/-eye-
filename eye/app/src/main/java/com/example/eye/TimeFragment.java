@@ -10,10 +10,15 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
+import android.widget.ToggleButton;
+
+import com.example.eye.service.JobSchedulerStart;
+
 import java.util.Calendar;
 
 import static android.content.Context.MODE_PRIVATE;
@@ -30,6 +35,8 @@ public class TimeFragment extends Fragment {
     SharedPreferences.Editor toEdit;
     int Hour;
     int Min;
+    int T = 0;
+    int alert = 0;
 
     @Nullable
     @Override
@@ -45,6 +52,31 @@ public class TimeFragment extends Fragment {
         //이전 설정 시간이 있을 경우 timer 작동
         final TimeThread thread = new TimeThread();
         thread.start();
+
+        //팝업 알림 제어
+        ToggleButton setting = rootView.findViewById(R.id.Button_pop_up_setting);
+        sh_Pref = mContext.getSharedPreferences("Time", MODE_PRIVATE);
+        if(sh_Pref != null && sh_Pref.getInt("state", 0) == 1) {
+            setting.setChecked(true);
+        }
+
+        setting.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                sh_Pref = mContext.getSharedPreferences("Time", MODE_PRIVATE);
+                toEdit = sh_Pref.edit();
+                if(isChecked == true) {
+                    Toast.makeText(getActivity(), "팝업 알림 ON", Toast.LENGTH_SHORT).show();
+                    toEdit.putInt("state", 1);
+                }
+                else {
+                    Toast.makeText(getActivity(), "팝업 알림 OFF", Toast.LENGTH_SHORT).show();
+                    toEdit.putInt("state", 0);
+                    JobSchedulerStart.destroy();
+                }
+                toEdit.commit();
+            }
+        });
 
         //Start 버튼
         ImageButton StartBtn = rootView.findViewById(R.id.time_start_button);
@@ -73,6 +105,7 @@ public class TimeFragment extends Fragment {
                 //저장된 설정 시간 지우기, thread 종료
                 sharedPrefernces(-1);
                 thread.interrupt();
+                Toast.makeText(getActivity(), "렌즈 착용 시간이 초기화 되었습니다.", Toast.LENGTH_SHORT).show();
             }
         });
         return rootView;
@@ -80,6 +113,10 @@ public class TimeFragment extends Fragment {
 
     public class TimeThread extends Thread {
         public void run() {
+            sh_Pref = mContext.getSharedPreferences("Time", MODE_PRIVATE);
+            if(sh_Pref != null && sh_Pref.getInt("state", 0) == 1) {
+                JobSchedulerStart.start(getActivity());
+            }
             while (true) {
                handler.post(new Runnable() {
                     public void run() {
@@ -90,6 +127,7 @@ public class TimeFragment extends Fragment {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     //thread가 interrupt될 경우, 시간을 0으로 설정
+                    JobSchedulerStart.destroy();
                     hourText.setText(Integer.toString(0));
                     minText.setText(Integer.toString(0));
                 }
@@ -101,35 +139,47 @@ public class TimeFragment extends Fragment {
         //쉐어프리퍼런스
         sh_Pref = mContext.getSharedPreferences("Time", MODE_PRIVATE);
         toEdit = sh_Pref.edit();
+        final Calendar cal = Calendar.getInstance();
+        final Calendar set = Calendar.getInstance();
+        int currentHour = cal.get(Calendar.HOUR_OF_DAY);
+        int currentMin = cal.get(Calendar.MINUTE);
+
+
         //이용 시작 시간 값 입력
         if(type == 1) {
-            toEdit.putInt("Start Time Hour", Hour);
-            toEdit.putInt("Start Time Minute", Min);
+            //Toast.makeText(getActivity(), "[렌즈 착용 시작 시간] " + Hour + ":"  + Min, Toast.LENGTH_LONG).show();
+            long aTime = (currentHour * 60 + currentMin) * 60 * 1000;
+            long bTime = (Hour * 60 + Min) * 60 * 1000;
+            if (bTime > aTime) {
+                //Toast.makeText(getActivity(), "a", Toast.LENGTH_SHORT).show();
+                set.set(Calendar.DATE, cal.get(Calendar.DAY_OF_MONTH) - 1);
+            }
+            set.set(Calendar.HOUR_OF_DAY, Hour);
+            set.set(Calendar.MINUTE, Min);
+            set.set(Calendar.SECOND, 0);
+            toEdit.putLong("Millis", set.getTimeInMillis());
+
+            //Toast.makeText(getActivity(), "[렌즈 착용 시작 시간] " + set.get(Calendar.DAY_OF_MONTH)+ "일 " + set.get(Calendar.HOUR_OF_DAY) + ":"  + set.get(Calendar.MINUTE), Toast.LENGTH_LONG).show();
         }
         //이용 시작 시간 값 제거
         else {
-            toEdit.remove("Start Time Hour");
-            toEdit.remove("Start Time Minute");
+            toEdit.remove("Millis");
         }
         toEdit.commit();
     }
 
     public void applySharedPreference() {
         sh_Pref = mContext.getSharedPreferences("Time", MODE_PRIVATE);
-        if (sh_Pref != null && sh_Pref.contains("Start Time Hour") && sh_Pref.contains("Start Time Minute")) {
+        if (sh_Pref != null && sh_Pref.contains("Millis")) {
             //현재 시간 정보(이용 시간을 나타낼때 사용)
-            final Calendar cal = Calendar.getInstance();
-            int currentHour = cal.get(Calendar.HOUR_OF_DAY);
-            int currentMin = cal.get(Calendar.MINUTE);
-            //현재 시간과 설정한 시간의 차로 이용 시간 set
-            if (currentMin < sh_Pref.getInt("Start Time Minute", 0)) {
-                hourText.setText(Integer.toString(currentHour - sh_Pref.getInt("Start Time Hour", 0) - 1));
-                minText.setText(Integer.toString(60 + currentMin - sh_Pref.getInt("Start Time Minute", 0)));
-            }
-            else {
-                hourText.setText(Integer.toString(currentHour - sh_Pref.getInt("Start Time Hour", 0)));
-                minText.setText(Integer.toString(currentMin - sh_Pref.getInt("Start Time Minute", 0)));
-            }
+            final Calendar current = Calendar.getInstance();
+            final Calendar set = Calendar.getInstance();
+            set.setTimeInMillis(sh_Pref.getLong("Millis", 0));
+
+            long remain = current.getTimeInMillis() - set.getTimeInMillis();
+            //Toast.makeText(getActivity(), "현재: " + current.get(Calendar.HOUR_OF_DAY) + ":" + current.get(Calendar.MINUTE) + " 설정: " + set.get(Calendar.HOUR_OF_DAY) + ":" + set.get(Calendar.MINUTE) + " 남: " + remain / (1000 * 60 * 60) + ":" + remain % (1000 * 60 * 60) / (1000 * 60), Toast.LENGTH_SHORT).show();
+            hourText.setText("" + (remain / (1000 * 60 * 60)) % 24);
+            minText.setText("" + (remain / (1000 * 60)) % 60);
         }
     }
 }

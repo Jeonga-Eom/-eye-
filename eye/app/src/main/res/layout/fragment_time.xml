@@ -16,13 +16,13 @@
             android:layout_alignParentTop="true"
             android:padding="10dp"/>
         #팝업 알림에 대한 설정 버튼
-        <Button
+        <ToggleButton
             android:id="@+id/Button_pop_up_setting"
-            android:text="설정"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:padding="10dp"/>
+            android:background="@color/colorPrimary"
+            android:textColor="#FFFFFF"/>
         <TextView
             android:id="@+id/middleLine"
             android:layout_width="match_parent"
