@@ -9,12 +9,14 @@
     tools:context=".YangActivity">
 
     <TextView
-        android:id="@+id/before"
-        android:layout_width="match_parent"
-        android:layout_height="47dp"
-        android:background="@color/colorAccent"
+        android:id="@+id/TextView_Yang_Title"
+        android:text="@string/FAQ"
+        android:textSize="40dp"
         android:gravity="center"
-        android:text="FAQ" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingBottom="30dp"/>
 
     <ExpandableListView
         android:id="@+id/expandableListView1"
