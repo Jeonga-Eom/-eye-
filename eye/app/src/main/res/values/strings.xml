@@ -7,7 +7,8 @@
     
     <!--Start of YangActivity-->
     <string name="text_kind">소프트, 하드, 드림렌즈의 차이점은?</string>
-    <string name="text_period">렌즈, 일회용과 장기용의 차이점은?</string>
+    <string name="text_period">일회용과 연속착용의 차이점은?</string>
+    <string name="text_material">소재는 어떤게 있나요?</string>
     <string name="text_dia">나에게 어울리는 그래픽 직경은?</string>
     <string name="text_buy">어디서 살 수 있나요?</string>
     <string name="text_how">쉽게 끼고 빼는 방법이 있나요?</string>
@@ -18,13 +19,20 @@
     <string name="text_tear">인공눈물, 일회용과 다회용의 차이점은?</string>
 
     <string-array name="string_array_kind">
-        <item>[소프트렌즈]는 초기 착용감이 편하며 산소투과율이 높은 실리콘 하이드로겔렌즈의 개발로 부작용이 많이 줄어들었습니다.
-        입문자에게 적합합니다. 컬러와 투명이 있는데, [컬러렌즈]는 두께가 두껍고 산소투과율이 낮아 부작용의 위험성이 훨씬 큽니다.
-        착용감은 큰 차이 없습니다.</item>
+        <item>[소프트렌즈]는 초기 착용감이 편하며 입문자에게 적합합니다. 컬러와 투명이 있는데, 착용감은 큰 차이 없습니다.
+            [컬러렌즈]는 두께가 두껍고 산소투과율이 낮아 부작용의 위험성이 훨씬 큽니다. </item>
         <item>[하드렌즈]는 익숙해질 때까지 적응기간이 필요합니다. 표면이 딱딱하여 시력교정 효과가 높고
             산소투과도가 소프트렌즈보다 높아 부작용이 적습니다.</item>
         <item>[드림렌즈]는 밤에 끼고 자면, 낮에는 렌즈 없이도 시력을 확보할 수 있게 해주는 렌즈입니다.
             각막의 모양을 변형시키는 특수한 렌즈로 비교적 비싸고 적응이 어려울 수 있습니다.</item>
+    </string-array>
+
+    <string-array name="string_array_material">
+        <item>[HEMA]는 일반적인 소재로 유연성이 좋고 가성비가 좋습니다.</item>
+        <item>[실리콘 하이드로겔]은 건조감에 좋은 소재입니다.</item>
+        <item>[퍼스퍼릴 콜린]은 인체 세포조직과 유사한 생체 친화 물질로,
+            인공 심장 판막과 같은 인공 신체에 사용되는 안전성이 높은 소재입니다.
+            렌즈 표면에 단백질과 이물질 침착 방지 효과도 있습니다.  </item>
     </string-array>
 
     <string-array name="string_array_period">

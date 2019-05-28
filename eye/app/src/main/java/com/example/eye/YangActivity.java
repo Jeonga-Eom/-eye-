@@ -106,6 +106,7 @@ public class YangActivity extends AppCompatActivity{
         // Adding group data : parent 개별 그룹 형성
         listDataGroup1.add(getString(R.string.text_kind));
         listDataGroup1.add(getString(R.string.text_period));
+        listDataGroup1.add(getString(R.string.text_material));
         listDataGroup1.add(getString(R.string.text_dia));
         listDataGroup1.add(getString(R.string.text_buy));
         listDataGroup1.add(getString(R.string.text_how));
@@ -130,6 +131,13 @@ public class YangActivity extends AppCompatActivity{
         array = getResources().getStringArray(R.array.string_array_period);
         for (String item : array) {
             periodList.add(item);
+        }
+
+        // list of period
+        List<String> materialList = new ArrayList<>();
+        array = getResources().getStringArray(R.array.string_array_material);
+        for (String item : array) {
+            materialList.add(item);
         }
 
         // list of dia
@@ -191,14 +199,15 @@ public class YangActivity extends AppCompatActivity{
         // Adding child data : child를 parent에 넣기
         listDataChild1.put(listDataGroup1.get(0), kindList);
         listDataChild1.put(listDataGroup1.get(1), periodList);
-        listDataChild1.put(listDataGroup1.get(2), diaList);
-        listDataChild1.put(listDataGroup1.get(3), buyList);
-        listDataChild1.put(listDataGroup1.get(4), howList);
-        listDataChild1.put(listDataGroup1.get(5), statusList);
-        listDataChild1.put(listDataGroup1.get(6), goList);
-        listDataChild1.put(listDataGroup1.get(7), limitList);
-        listDataChild1.put(listDataGroup1.get(8), cleanList);
-        listDataChild1.put(listDataGroup1.get(9), tearList);
+        listDataChild1.put(listDataGroup1.get(2), materialList);
+        listDataChild1.put(listDataGroup1.get(3), diaList);
+        listDataChild1.put(listDataGroup1.get(4), buyList);
+        listDataChild1.put(listDataGroup1.get(5), howList);
+        listDataChild1.put(listDataGroup1.get(6), statusList);
+        listDataChild1.put(listDataGroup1.get(7), goList);
+        listDataChild1.put(listDataGroup1.get(8), limitList);
+        listDataChild1.put(listDataGroup1.get(9), cleanList);
+        listDataChild1.put(listDataGroup1.get(10), tearList);
 
         // notify the adapter :어댑터에 적용
         expandableListViewAdapter1.notifyDataSetChanged();
