@@ -147,11 +147,9 @@ public class TimeFragment extends Fragment {
 
         //이용 시작 시간 값 입력
         if(type == 1) {
-            //Toast.makeText(getActivity(), "[렌즈 착용 시작 시간] " + Hour + ":"  + Min, Toast.LENGTH_LONG).show();
             long aTime = (currentHour * 60 + currentMin) * 60 * 1000;
             long bTime = (Hour * 60 + Min) * 60 * 1000;
             if (bTime > aTime) {
-                //Toast.makeText(getActivity(), "a", Toast.LENGTH_SHORT).show();
                 set.set(Calendar.DATE, cal.get(Calendar.DAY_OF_MONTH) - 1);
             }
             set.set(Calendar.HOUR_OF_DAY, Hour);
@@ -159,7 +157,7 @@ public class TimeFragment extends Fragment {
             set.set(Calendar.SECOND, 0);
             toEdit.putLong("Millis", set.getTimeInMillis());
 
-            //Toast.makeText(getActivity(), "[렌즈 착용 시작 시간] " + set.get(Calendar.DAY_OF_MONTH)+ "일 " + set.get(Calendar.HOUR_OF_DAY) + ":"  + set.get(Calendar.MINUTE), Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), "[렌즈 착용 시작 시간] " + set.get(Calendar.DAY_OF_MONTH)+ "일 " + set.get(Calendar.HOUR_OF_DAY) + ":"  + set.get(Calendar.MINUTE), Toast.LENGTH_LONG).show();
         }
         //이용 시작 시간 값 제거
         else {

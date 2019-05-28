@@ -1,80 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/time_period_ScrollView"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:id="@+id/time_period_Layout"
+    <TextView
+        android:id="@+id/TextView_Eom_Title"
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="20dp"
+        android:paddingBottom="30dp"
+        android:text="@string/time_period"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="30dp" />
 
-        <TextView
-            android:id="@+id/TextView_Eom_Title"
-            android:text="@string/time_period"
-            android:textSize="40dp"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="20dp"
-            android:paddingBottom="30dp"/>
-        <View
-            android:id="@+id/eom_first_line"
-            android:layout_width="match_parent"
-            android:layout_height="3dp"
-            android:background="#E4E4E4"
-            android:layout_below="@+id/TextView_Eom_Title"/>
+    <View
+        android:id="@+id/eom_first_line"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_below="@+id/TextView_Eom_Title"
+        android:background="#E4E4E4"
+        app:layout_constraintTop_toBottomOf="@+id/TextView_Eom_Title" />
 
-        <fragment
-            android:id="@+id/Fragment_time"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:name="com.example.eye.TimeFragment"
-            android:layout_below="@+id/eom_first_line"
-        />
-        <View
-            android:id="@+id/eom_second_line"
-            android:layout_width="match_parent"
-            android:layout_height="3dp"
-            android:background="#E4E4E4"
-            android:layout_below="@+id/Fragment_time"/>
-        <TextView
-            android:id="@+id/TextView_period_title"
-            android:text="PERIOD"
-            android:textSize="24dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/eom_second_line"
-            android:paddingTop="20dp"
-            android:paddingLeft="20dp"
-            android:paddingBottom="10dp"/>
+    <fragment
+        android:id="@+id/Fragment_time"
+        android:name="com.example.eye.TimeFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eom_first_line"
+        app:layout_constraintTop_toBottomOf="@+id/eom_first_line" />
 
-        <ListView
-            android:id="@+id/ListView_period"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/TextView_period_title"
-            android:paddingTop="10dp"></ListView>
+    <View
+        android:id="@+id/eom_second_line"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#E4E4E4"
+        app:layout_constraintTop_toBottomOf="@+id/Fragment_time" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_below="@+id/ListView_period">
+    <TextView
+        android:id="@+id/TextView_period_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingBottom="10dp"
+        android:text="PERIOD"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/ListView_period"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eom_second_line"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="UnknownId" />
 
-            <ImageButton
-                android:id="@+id/add"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:src="@drawable/addbtn"
-                android:background="@android:color/transparent"
-                android:adjustViewBounds="true"
-                android:scaleType="centerInside"
-                android:layout_margin="25dp" />
-        </LinearLayout>
-    </RelativeLayout>
+    <ListView
+        android:id="@+id/ListView_period"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingTop="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/add"
+        app:layout_constraintTop_toBottomOf="@+id/TextView_period_title"
+        tools:ignore="NotSibling"
+        tools:layout_editor_absoluteX="-16dp" />
 
-</ScrollView>
+    <ImageButton
+        android:id="@+id/add"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="25dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:scaleType="centerInside"
+        android:src="@drawable/addbtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+</android.support.constraint.ConstraintLayout>
