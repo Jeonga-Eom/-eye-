@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
-
+    xmlns:tools="http://schemas.android.com/tools">
     <TextView
         android:id="@+id/TextView_Kim_Title"
         android:layout_width="match_parent"
@@ -18,48 +14,56 @@
         android:text="My Lens"
         android:textSize="40dp"
         android:textColor="#FFFFFF"
-        android:background="@color/colorPrimary" />
+        android:background="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="30dp" />
 
     <TextView
         android:id="@+id/text_history"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/TextView_Kim_Title"
         android:text="History"
         android:textSize="40dp"
         android:gravity="center"/>
 
     <View
+        android:id="@+id/kim_first_line"
         android:layout_width="match_parent"
         android:layout_height="3dp"
         android:layout_marginBottom="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/text_history"
         android:background="#E4E4E4"
     />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerview_main_list"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:orientation="horizontal"
         app:layout_constraintVertical_weight="9"
         android:scrollbarFadeDuration="0"
         android:scrollbarSize="10dp"
         android:scrollbarThumbVertical="@android:color/darker_gray"
         android:scrollbars="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/button_main_insert"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/kim_first_line" />
 
     <TextView
         android:id="@+id/text_WishList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerview_main_list"
         android:text="WishList"
         android:textSize="40dp"
         android:gravity="center"/>
     <View
+        android:id="@+id/kim_second_line"
         android:layout_width="match_parent"
         android:layout_height="3dp"
         android:layout_marginBottom="10dp"
         android:background="#E4E4E4"
+        app:layout_constraintTop_toBottomOf="@+id/text_WishList"
         />
 
     <android.support.v7.widget.RecyclerView
@@ -71,8 +75,7 @@
         android:scrollbarSize="10dp"
         android:scrollbarThumbVertical="@android:color/darker_gray"
         android:scrollbars="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/button_main_insert"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/kim_second_line" />
 
     <ImageButton
         android:id="@+id/button_main_insert"
@@ -84,6 +87,10 @@
         android:scaleType="centerInside"
         android:src="@drawable/addbtn"
         android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         />
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>
