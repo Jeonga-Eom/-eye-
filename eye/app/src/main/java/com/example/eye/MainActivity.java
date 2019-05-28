@@ -1,14 +1,22 @@
 package com.example.eye;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 public class MainActivity extends AppCompatActivity {
     ImageButton time_period, source;
@@ -53,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent4);
             }
         });
-
     }
     public void onBackPressed() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -70,4 +77,6 @@ public class MainActivity extends AppCompatActivity {
                 });
         builder.show();
     }
+
+
 }
