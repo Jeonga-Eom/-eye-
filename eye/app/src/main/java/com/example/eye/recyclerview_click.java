@@ -25,8 +25,6 @@ public class recyclerview_click extends AppCompatActivity {
     TextView BC;
     TextView Sale;
     TextView Period;
-    DBHelper dbHelper;
-    SQLiteDatabase db;
     final static String dbName = "LENS.db";
     final static int dbVersion = 2;
     String sql;
@@ -52,9 +50,7 @@ public class recyclerview_click extends AppCompatActivity {
         Sale = findViewById(R.id.sale);
         Period = findViewById(R.id.period);
 
-        dbHelper = new DBHelper(this, "LENS.db", null, 1);
-        db = dbHelper.getReadableDatabase();
-
+        SQLiteDatabase db = MainActivity.db;
         Left.setText(intent.getStringExtra("left"));
         Right.setText(intent.getStringExtra("right"));
         LensName.setText(intent.getStringExtra("lens"));

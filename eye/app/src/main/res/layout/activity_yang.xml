@@ -7,11 +7,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".YangActivity">
-
     <TextView
         android:id="@+id/TextView_Yang_Title"
         android:text="@string/FAQ"
         android:textSize="40dp"
+        android:textColor="#FFFFFF"
+        android:background="@color/colorPrimary"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

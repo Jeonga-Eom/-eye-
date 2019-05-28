@@ -7,26 +7,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/button_main_insert"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:background="#E87F76"
-            android:layout_margin="10dp"
-            android:text="+" />
-
-    </RelativeLayout>
-
-
-    <View
+    <TextView
+        android:id="@+id/TextView_Kim_Title"
         android:layout_width="match_parent"
-        android:layout_height="6dp"
-        android:background="#E87F76"/>
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="20dp"
+        android:paddingBottom="30dp"
+        android:text="My Lens"
+        android:textSize="40dp"
+        android:textColor="#FFFFFF"
+        android:background="@color/colorPrimary" />
+
     <TextView
         android:id="@+id/text_history"
         android:layout_width="match_parent"
@@ -35,6 +28,12 @@
         android:textSize="40dp"
         android:gravity="center"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginBottom="10dp"
+        android:background="#E4E4E4"
+    />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerview_main_list"
@@ -56,6 +55,12 @@
         android:text="WishList"
         android:textSize="40dp"
         android:gravity="center"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginBottom="10dp"
+        android:background="#E4E4E4"
+        />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerview_main_list2"
@@ -69,5 +74,16 @@
         app:layout_constraintBottom_toTopOf="@+id/button_main_insert"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageButton
+        android:id="@+id/button_main_insert"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="25dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:scaleType="centerInside"
+        android:src="@drawable/addbtn"
+        android:layout_gravity="center"
+        />
 
 </LinearLayout>

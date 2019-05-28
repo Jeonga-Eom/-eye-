@@ -19,6 +19,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -74,7 +75,7 @@ public class KimActivity extends AppCompatActivity {
         mRecyclerView2.setAdapter(mAdapter2);
 
 
-        Button buttonInsert = (Button)findViewById(R.id.button_main_insert);
+        ImageButton buttonInsert = findViewById(R.id.button_main_insert);
         buttonInsert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

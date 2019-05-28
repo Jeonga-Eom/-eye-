@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.AssetManager;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -19,8 +20,8 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class MainActivity extends AppCompatActivity {
-    ImageButton time_period, source;
-    Button yang, kim;
+    ImageButton time_period, faq, mylens, source;
+    static SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         time_period=findViewById(R.id.eom);
-        yang=findViewById(R.id.yang);
-        kim=findViewById(R.id.kim);
+        faq=findViewById(R.id.yang);
+        mylens=findViewById(R.id.kim);
         source=findViewById(R.id.source);
 
         time_period.setOnClickListener(new View.OnClickListener() {
@@ -40,14 +41,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        yang.setOnClickListener(new View.OnClickListener() {
+        faq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent2 = new Intent(getApplicationContext(), YangActivity.class);
                 startActivity(intent2);
             }
         });
-        kim.setOnClickListener(new View.OnClickListener() {
+        mylens.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent3 = new Intent(getApplicationContext(), KimActivity.class);
@@ -61,6 +62,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent4);
             }
         });
+
+        DBHelper dbHelper = new DBHelper(this, "LENS.db", null, 1);
+        try {
+            db = dbHelper.getReadableDatabase();
+        } catch (Exception e) {
+            db = dbHelper.getReadableDatabase();
+        }
     }
     public void onBackPressed() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

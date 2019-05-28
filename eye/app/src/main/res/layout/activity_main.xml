@@ -40,23 +40,27 @@
             android:scaleType="centerInside"
             android:src="@drawable/timeperiodbtn" />
 
-        <Button
+        <ImageButton
             android:id="@+id/yang"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="55dp"
             android:layout_gravity="center"
-            android:text="yang"
-            tools:layout_editor_absoluteX="174dp"
-            tools:layout_editor_absoluteY="400dp" />
+            android:padding="10dp"
+            android:src="@drawable/faqbtn"
+            android:background="@android:color/transparent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside" />
 
-        <Button
+        <ImageButton
             android:id="@+id/kim"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="55dp"
             android:layout_gravity="center"
-            android:text="kim"
-            tools:layout_editor_absoluteX="174dp"
-            tools:layout_editor_absoluteY="462dp" />
+            android:padding="10dp"
+            android:src="@drawable/mylensbtn"
+            android:background="@android:color/transparent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside" />
 
         <ImageButton
             android:id="@+id/source"

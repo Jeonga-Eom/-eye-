@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="350dp"
+    android:layout_height="400dp">
 
     <EditText
         android:id="@+id/LensSearch"
-        android:layout_width="329dp"
-        android:layout_height="wrap_content"
-        android:layout_x="13dp"
-        android:layout_y="46dp"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:hint="   렌즈의 이름을 적으세요"
         android:privateImeOptions="defaultInputmode=korean" />
 
 
     <ListView
+        android:gravity="center"
         android:id="@+id/listview"
-        android:layout_width="307dp"
-        android:layout_height="189dp"
-        android:layout_x="20dp"
-        android:layout_y="126dp">
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        >
 
     </ListView>
-
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
     <Button
         android:id="@+id/before"
         android:layout_width="107dp"
@@ -31,7 +32,9 @@
         android:layout_x="48dp"
         android:layout_y="327dp"
         android:background="#FF8080"
-        android:text="이전" />
+        android:text="이전"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
 
     <Button
         android:id="@+id/next2"
@@ -40,7 +43,10 @@
         android:layout_x="200dp"
         android:layout_y="327dp"
         android:background="#FF8080"
-        android:text="Next" />
+        android:text="Next"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+    </LinearLayout>
 
-
-</AbsoluteLayout>
+</LinearLayout>
