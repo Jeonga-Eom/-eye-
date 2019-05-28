@@ -35,8 +35,6 @@ public class TimeFragment extends Fragment {
     SharedPreferences.Editor toEdit;
     int Hour;
     int Min;
-    int T = 0;
-    int alert = 0;
 
     @Nullable
     @Override
@@ -139,14 +137,13 @@ public class TimeFragment extends Fragment {
         //쉐어프리퍼런스
         sh_Pref = mContext.getSharedPreferences("Time", MODE_PRIVATE);
         toEdit = sh_Pref.edit();
-        final Calendar cal = Calendar.getInstance();
-        final Calendar set = Calendar.getInstance();
-        int currentHour = cal.get(Calendar.HOUR_OF_DAY);
-        int currentMin = cal.get(Calendar.MINUTE);
-
 
         //이용 시작 시간 값 입력
         if(type == 1) {
+            final Calendar cal = Calendar.getInstance();
+            final Calendar set = Calendar.getInstance();
+            int currentHour = cal.get(Calendar.HOUR_OF_DAY);
+            int currentMin = cal.get(Calendar.MINUTE);
             long aTime = (currentHour * 60 + currentMin) * 60 * 1000;
             long bTime = (Hour * 60 + Min) * 60 * 1000;
             if (bTime > aTime) {
