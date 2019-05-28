@@ -3,12 +3,16 @@ package com.example.eye;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.util.Linkify;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class SourceActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,5 +31,11 @@ public class SourceActivity extends AppCompatActivity {
         Pattern pattern2 = Pattern.compile("www.flaticon.com");
         Linkify.addLinks(mainlogo, pattern1, "https://www.flaticon.com/authors/iconixar",null,mTransform);
         Linkify.addLinks(mainlogo, pattern2, "https://www.flaticon.com",null,mTransform);
+
+       final String[] ListMenu=getResources().getStringArray(R.array.reference_array);
+
+       ArrayAdapter adapter=new ArrayAdapter(this, android.R.layout.simple_list_item_1, ListMenu);
+        ListView listView=(ListView)findViewById(R.id.reference);
+        listView.setAdapter(adapter);
     }
 }

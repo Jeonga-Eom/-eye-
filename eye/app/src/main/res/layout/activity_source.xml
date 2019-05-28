@@ -38,4 +38,11 @@
             android:text=" dkdk "/>
     </TableRow>
     </TableLayout>
+
+    <ListView
+        android:id="@+id/reference"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ListView>
+
 </LinearLayout>
