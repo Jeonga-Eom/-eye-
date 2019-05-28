@@ -1,8 +1,11 @@
 package com.example.eye;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -52,5 +55,19 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("아이아퍼")
+                .setMessage("앱을 종료하시겠습니까?")
+                .setNegativeButton("취소", null)
+                .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        {
+                            finish();
+                        }
+                    }
+                });
+        builder.show();
+    }
 }

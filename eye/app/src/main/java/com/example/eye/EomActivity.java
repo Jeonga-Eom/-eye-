@@ -84,7 +84,7 @@ public class EomActivity extends AppCompatActivity implements ListViewAdapter.Li
         }
         listview = (ListView) findViewById(R.id.ListView_period);
         listview.setAdapter(adapter);
-        setListViewHeightBasedOnChildren(listview);
+        //setListViewHeightBasedOnChildren(listview);
         adapter.notifyDataSetChanged();
     }
 
@@ -151,29 +151,5 @@ public class EomActivity extends AppCompatActivity implements ListViewAdapter.Li
         }
         toEdit.putInt("number", j - 1);
         toEdit.commit();
-    }
-
-
-    //ScrollView에서 ListView의 height 조절
-    public static void setListViewHeightBasedOnChildren(ListView listView) {
-        ListAdapter listAdapter = listView.getAdapter();
-        if (listAdapter == null) {
-            // pre-condition
-            return;
-        }
-
-        int totalHeight = 1;
-        int desiredWidth = View.MeasureSpec.makeMeasureSpec(listView.getWidth(), View.MeasureSpec.AT_MOST);
-
-        for (int i = 0; i < listAdapter.getCount(); i++) {
-            View listItem = listAdapter.getView(i, null, listView);
-            listItem.measure(desiredWidth, View.MeasureSpec.UNSPECIFIED);
-            totalHeight += listItem.getMeasuredHeight();
-        }
-
-        ViewGroup.LayoutParams params = listView.getLayoutParams();
-        params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
-        listView.setLayoutParams(params);
-        listView.requestLayout();
     }
 }
