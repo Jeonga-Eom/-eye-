@@ -158,7 +158,8 @@ public class TimeFragment extends Fragment {
         }
         //이용 시작 시간 값 제거
         else {
-            toEdit.remove("Millis");
+            if(sh_Pref != null && sh_Pref.contains("Millis"))
+                toEdit.remove("Millis");
         }
         toEdit.commit();
     }
