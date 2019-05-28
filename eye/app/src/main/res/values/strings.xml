@@ -4,7 +4,7 @@
     <string name="FAQ">FAQ</string>
     <string name="notification_channel_id">"notification_channel_id"</string>
     <string name="notification_channel_name">"notification_channel_name"</string>
-    
+
     <!--Start of YangActivity-->
     <string name="text_kind">소프트, 하드, 드림렌즈의 차이점은?</string>
     <string name="text_period">일회용과 연속착용의 차이점은?</string>
@@ -103,7 +103,8 @@
         <item>무방부제 [일회용 인공눈물]은 렌즈 착용 중에도 사용할 수 있습니다.
             하지만 렌즈와 눈을 밀착 시켜 각막에 부담이 될 수 있으니 과도한 사용은 하지않습니다.</item>
     </string-array>
-<!--End of YangActivity-->
-    
+    <string name="title_activity_recycler_click">recycler_click</string>
+    <!--End of YangActivity-->
+
 </resources>
    

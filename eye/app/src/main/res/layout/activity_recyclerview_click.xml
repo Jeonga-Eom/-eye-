@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageview"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_x="94dp"
+        android:layout_y="30dp"
+        android:src="@drawable/eye" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="52dp"
+        android:layout_y="153dp"
+        android:background="#555555"
+        android:text="왼쪽렌즈도수"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="150dp"
+        android:layout_y="159dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/text-2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="218dp"
+        android:layout_y="153dp"
+        android:text="오른쪽렌즈도수"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="335dp"
+        android:layout_y="156dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/text-1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="258dp"
+        android:layout_y="442dp"
+        android:text="렌즈회사"
+        android:textSize="15dp" />
+
+
+    <TextView
+        android:id="@+id/companyname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="344dp"
+        android:layout_y="442dp"
+        android:text="" />
+
+
+    <TextView
+        android:id="@+id/lensname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="202dp"
+        android:layout_y="62dp"
+        android:text="d"
+        android:textSize="15dp" />
+
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="38dp"
+        android:layout_y="227dp"
+        android:text="렌즈직경"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/dia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="120dp"
+        android:layout_y="232dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/text1-2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="223dp"
+        android:layout_y="226dp"
+        android:text="렌즈그래픽직경"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/gdia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="342dp"
+        android:layout_y="226dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="26dp"
+        android:layout_y="364dp"
+        android:text="렌즈베이스커브"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/bc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="141dp"
+        android:layout_y="369dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="249dp"
+        android:layout_y="293dp"
+        android:text="렌즈함수율"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/moisture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="339dp"
+        android:layout_y="296dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/text4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="44dp"
+        android:layout_y="444dp"
+        android:text="렌즈가격"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/sale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="135dp"
+        android:layout_y="444dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/text5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="39dp"
+        android:layout_y="290dp"
+        android:text="렌즈 색상"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="130dp"
+        android:layout_y="290dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/text6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="244dp"
+        android:layout_y="364dp"
+        android:text="렌즈기간"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/period"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="323dp"
+        android:layout_y="365dp"
+        android:text="" />
+
+
+
+
+</AbsoluteLayout>

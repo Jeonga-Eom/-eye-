@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/LensSearch"
+        android:layout_width="329dp"
+        android:layout_height="wrap_content"
+        android:layout_x="13dp"
+        android:layout_y="46dp"
+        android:hint="   렌즈의 이름을 적으세요"
+        android:privateImeOptions="defaultInputmode=korean" />
+
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="307dp"
+        android:layout_height="189dp"
+        android:layout_x="20dp"
+        android:layout_y="126dp">
+
+    </ListView>
+
+    <Button
+        android:id="@+id/before"
+        android:layout_width="107dp"
+        android:layout_height="96dp"
+        android:layout_x="48dp"
+        android:layout_y="327dp"
+        android:text="이전" />
+
+    <Button
+        android:id="@+id/next2"
+        android:layout_width="107dp"
+        android:layout_height="96dp"
+        android:layout_x="200dp"
+        android:layout_y="327dp"
+        android:text="Next" />
+
+
+</AbsoluteLayout>

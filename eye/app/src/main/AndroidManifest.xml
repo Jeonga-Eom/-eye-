@@ -12,12 +12,15 @@
         android:icon="@drawable/mainlogo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:screenOrientation="portrait"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".SourceActivity"></activity>
-        <!-- 시작 액티비티를 splash로 설정, theme 지정 -->
+        <activity
+            android:name=".recyclerview_click"
+            android:label="@string/title_activity_recycler_click"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".SourceActivity" /> <!-- 시작 액티비티를 splash로 설정, theme 지정 -->
         <activity
             android:name=".SplashActivity"
             android:theme="@style/SplashTheme">
