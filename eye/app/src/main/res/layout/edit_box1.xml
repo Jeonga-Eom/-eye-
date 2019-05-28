@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Left \n Lens"
+        android:textColor="#E87F76"
         android:textSize="40dp"
         android:layout_x="60dp"
         android:layout_y="100dp"/>
@@ -21,6 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_x="204dp"
         android:layout_y="100dp"
+        android:textColor="#E87F76"
         android:text="Right \n Lens"
         android:textSize="40dp" />
 
@@ -52,6 +54,7 @@
         android:layout_marginBottom="40dp"
         android:layout_x="53dp"
         android:layout_y="320dp"
+        android:background="#FF8080"
         android:text="취소" />
 
     <Button
@@ -61,5 +64,6 @@
         android:layout_marginBottom="40dp"
         android:layout_x="200dp"
         android:layout_y="320dp"
+        android:background="#FF8080"
         android:text="Next" />
 </AbsoluteLayout>

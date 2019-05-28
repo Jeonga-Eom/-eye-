@@ -17,53 +17,61 @@
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="52dp"
-        android:layout_y="153dp"
-        android:background="#555555"
+        android:layout_x="40dp"
+        android:layout_y="156dp"
+        android:background="#FF8080"
+        android:padding="10dp"
         android:text="왼쪽렌즈도수"
-        android:textSize="15dp" />
+        android:textSize="18dp" />
 
     <TextView
         android:id="@+id/left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="150dp"
-        android:layout_y="159dp"
-        android:text="" />
+        android:layout_x="168dp"
+        android:layout_y="166dp"
+        android:text=""
+        android:textSize="18dp" />
 
     <TextView
         android:id="@+id/text-2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="218dp"
-        android:layout_y="153dp"
+        android:layout_x="205dp"
+        android:layout_y="158dp"
+        android:background="#FF8080"
+        android:padding="10dp"
         android:text="오른쪽렌즈도수"
-        android:textSize="15dp" />
+        android:textSize="18dp" />
 
     <TextView
         android:id="@+id/right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="335dp"
-        android:layout_y="156dp"
-        android:text="" />
+        android:layout_x="348dp"
+        android:layout_y="166dp"
+        android:text=""
+        android:textSize="18dp" />
 
     <TextView
         android:id="@+id/text-1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="258dp"
-        android:layout_y="442dp"
+        android:layout_x="242dp"
+        android:layout_y="438dp"
+        android:background="#FF8080"
+        android:padding="10dp"
         android:text="렌즈회사"
-        android:textSize="15dp" />
+        android:textSize="18dp" />
 
 
     <TextView
         android:id="@+id/companyname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="344dp"
-        android:layout_y="442dp"
+        android:layout_x="338dp"
+        android:layout_y="440dp"
+        android:textSize="18dp"
         android:text="" />
 
 
@@ -74,7 +82,7 @@
         android:layout_x="202dp"
         android:layout_y="62dp"
         android:text="d"
-        android:textSize="15dp" />
+        android:textSize="22dp" />
 
 
     <TextView
@@ -82,119 +90,140 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_x="38dp"
-        android:layout_y="227dp"
+        android:layout_y="221dp"
+        android:background="#FF8080"
+        android:padding="10dp"
         android:text="렌즈직경"
-        android:textSize="15dp" />
+        android:textSize="18dp" />
 
     <TextView
         android:id="@+id/dia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="120dp"
-        android:layout_y="232dp"
-        android:text="" />
+        android:layout_x="135dp"
+        android:layout_y="225dp"
+        android:text=""
+        android:textSize="18dp" />
 
     <TextView
         android:id="@+id/text1-2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="223dp"
-        android:layout_y="226dp"
+        android:layout_x="200dp"
+        android:layout_y="225dp"
+        android:background="#FF8080"
+        android:padding="10dp"
         android:text="렌즈그래픽직경"
-        android:textSize="15dp" />
+        android:textSize="18dp" />
 
     <TextView
         android:id="@+id/gdia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="342dp"
-        android:layout_y="226dp"
-        android:text="" />
+        android:layout_x="345dp"
+        android:layout_y="233dp"
+        android:text=""
+        android:textSize="18dp" />
 
     <TextView
         android:id="@+id/text2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="26dp"
-        android:layout_y="364dp"
+        android:layout_x="31dp"
+        android:layout_y="365dp"
+        android:background="#FF8080"
+        android:padding="10dp"
         android:text="렌즈베이스커브"
-        android:textSize="15dp" />
+        android:textSize="18dp" />
 
     <TextView
         android:id="@+id/bc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="141dp"
-        android:layout_y="369dp"
-        android:text="" />
+        android:layout_x="177dp"
+        android:layout_y="365dp"
+        android:text=""
+        android:textSize="18dp" />
 
     <TextView
         android:id="@+id/text3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="249dp"
-        android:layout_y="293dp"
+        android:layout_x="219dp"
+        android:layout_y="290dp"
+        android:background="#FF8080"
+        android:padding="10dp"
         android:text="렌즈함수율"
-        android:textSize="15dp" />
+        android:textSize="18dp" />
 
     <TextView
         android:id="@+id/moisture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="339dp"
-        android:layout_y="296dp"
-        android:text="" />
+        android:layout_x="335dp"
+        android:layout_y="294dp"
+        android:text=""
+        android:textSize="18dp" />
 
     <TextView
         android:id="@+id/text4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="44dp"
-        android:layout_y="444dp"
+        android:layout_x="52dp"
+        android:layout_y="440dp"
+        android:background="#FF8080"
+        android:padding="10dp"
         android:text="렌즈가격"
-        android:textSize="15dp" />
+        android:textSize="18dp" />
 
     <TextView
         android:id="@+id/sale"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="135dp"
-        android:layout_y="444dp"
-        android:text="" />
+        android:layout_x="151dp"
+        android:layout_y="446dp"
+        android:text=""
+        android:textSize="18dp" />
 
     <TextView
         android:id="@+id/text5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="39dp"
+        android:layout_x="41dp"
         android:layout_y="290dp"
+        android:background="#FF8080"
+        android:padding="10dp"
         android:text="렌즈 색상"
-        android:textSize="15dp" />
+        android:textSize="18dp" />
 
     <TextView
         android:id="@+id/color"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="130dp"
+        android:layout_x="145dp"
         android:layout_y="290dp"
-        android:text="" />
+        android:text=""
+        android:textSize="18dp"/>
 
     <TextView
         android:id="@+id/text6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_x="244dp"
-        android:layout_y="364dp"
+        android:layout_y="365dp"
+        android:background="#FF8080"
+        android:padding="10dp"
         android:text="렌즈기간"
-        android:textSize="15dp" />
+        android:textSize="18dp" />
 
     <TextView
         android:id="@+id/period"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="323dp"
-        android:layout_y="365dp"
-        android:text="" />
+        android:layout_x="340dp"
+        android:layout_y="367dp"
+        android:text=""
+        android:textSize="18dp" />
 
 
 

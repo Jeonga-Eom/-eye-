@@ -30,6 +30,7 @@
         android:layout_height="96dp"
         android:layout_x="48dp"
         android:layout_y="327dp"
+        android:background="#FF8080"
         android:text="이전" />
 
     <Button
@@ -38,6 +39,7 @@
         android:layout_height="96dp"
         android:layout_x="200dp"
         android:layout_y="327dp"
+        android:background="#FF8080"
         android:text="Next" />
 
 
