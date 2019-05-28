@@ -245,6 +245,8 @@ public class KimActivity extends AppCompatActivity {
 
 
                 dialog.show();
+
+           
             }
         });
 
