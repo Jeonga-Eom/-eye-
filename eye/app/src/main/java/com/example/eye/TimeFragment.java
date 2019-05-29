@@ -1,7 +1,6 @@
 package com.example.eye;
 
 import android.app.TimePickerDialog;
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
@@ -25,7 +24,6 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class TimeFragment extends Fragment {
     //getSharedPreferences 오류 해결을 위한 Context
-    private Context mContext;
     Handler handler = new Handler();
     //사용한 시간 표시 TextView
     TextView hourText;
@@ -42,10 +40,9 @@ public class TimeFragment extends Fragment {
         ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_time, container, false);
 
         //현재 시간을 얻기 위한 Calendar(timepickerdialog에 나타낼 때 이용), 착용 시간을 표시할 TextView와 오류 해결을 위한 Content
-        final Calendar cal = Calendar.getInstance();
+
         hourText = rootView.findViewById(R.id.TextView_time_hours);
         minText = rootView.findViewById(R.id.TextView_time_minutes);
-        mContext = getActivity();
 
         //이전 설정 시간이 있을 경우 timer 작동
         final TimeThread thread = new TimeThread();
@@ -53,7 +50,7 @@ public class TimeFragment extends Fragment {
 
         //팝업 알림 제어
         ToggleButton setting = rootView.findViewById(R.id.Button_pop_up_setting);
-        sh_Pref = mContext.getSharedPreferences("Time", MODE_PRIVATE);
+        sh_Pref = getActivity().getSharedPreferences("Time", MODE_PRIVATE);
         if(sh_Pref != null && sh_Pref.getInt("state", 0) == 1) {
             setting.setChecked(true);
         }
@@ -61,18 +58,19 @@ public class TimeFragment extends Fragment {
         setting.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                sh_Pref = mContext.getSharedPreferences("Time", MODE_PRIVATE);
+                sh_Pref = getActivity().getSharedPreferences("Time", MODE_PRIVATE);
                 toEdit = sh_Pref.edit();
-                if(isChecked == true) {
+                if(isChecked) {
                     Toast.makeText(getActivity(), "팝업 알림 ON", Toast.LENGTH_SHORT).show();
                     toEdit.putInt("state", 1);
                 }
                 else {
                     Toast.makeText(getActivity(), "팝업 알림 OFF", Toast.LENGTH_SHORT).show();
-                    toEdit.putInt("state", 0);
-                    JobSchedulerStart.destroy();
+                    toEdit.remove("state");
+                    if(sh_Pref.getInt("alert", 0) == 1)
+                        JobSchedulerStart.destroy();
                 }
-                toEdit.commit();
+                toEdit.apply();
             }
         });
 
@@ -80,6 +78,7 @@ public class TimeFragment extends Fragment {
         ImageButton StartBtn = rootView.findViewById(R.id.time_start_button);
         StartBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                final Calendar cal = Calendar.getInstance();
                 TimePickerDialog dialog = new TimePickerDialog(getActivity(), new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     //TimePickerDialog에서 설정한 시간 hour:min
@@ -111,7 +110,6 @@ public class TimeFragment extends Fragment {
 
     public class TimeThread extends Thread {
         public void run() {
-            sh_Pref = mContext.getSharedPreferences("Time", MODE_PRIVATE);
             if(sh_Pref != null && sh_Pref.getInt("state", 0) == 1) {
                 JobSchedulerStart.start(getActivity());
             }
@@ -125,7 +123,8 @@ public class TimeFragment extends Fragment {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     //thread가 interrupt될 경우, 시간을 0으로 설정
-                    JobSchedulerStart.destroy();
+                    if(sh_Pref.getInt("alert", 0) == 1)
+                        JobSchedulerStart.destroy();
                     hourText.setText(Integer.toString(0));
                     minText.setText(Integer.toString(0));
                 }
@@ -135,37 +134,37 @@ public class TimeFragment extends Fragment {
 
     public void sharedPrefernces(int type) {
         //쉐어프리퍼런스
-        sh_Pref = mContext.getSharedPreferences("Time", MODE_PRIVATE);
+        sh_Pref = getActivity().getSharedPreferences("Time", MODE_PRIVATE);
         toEdit = sh_Pref.edit();
-
         //이용 시작 시간 값 입력
-        if(type == 1) {
+        if (type == 1) {
             final Calendar cal = Calendar.getInstance();
             final Calendar set = Calendar.getInstance();
             int currentHour = cal.get(Calendar.HOUR_OF_DAY);
             int currentMin = cal.get(Calendar.MINUTE);
             long aTime = (currentHour * 60 + currentMin) * 60 * 1000;
             long bTime = (Hour * 60 + Min) * 60 * 1000;
+
             if (bTime > aTime) {
                 set.set(Calendar.DATE, cal.get(Calendar.DAY_OF_MONTH) - 1);
             }
+
             set.set(Calendar.HOUR_OF_DAY, Hour);
             set.set(Calendar.MINUTE, Min);
             set.set(Calendar.SECOND, 0);
-            toEdit.putLong("Millis", set.getTimeInMillis());
 
-            Toast.makeText(getActivity(), "[렌즈 착용 시작 시간] " + set.get(Calendar.DAY_OF_MONTH)+ "일 " + set.get(Calendar.HOUR_OF_DAY) + ":"  + set.get(Calendar.MINUTE), Toast.LENGTH_LONG).show();
+            toEdit.putLong("Millis", set.getTimeInMillis());
+            Toast.makeText(getActivity(), "[렌즈 착용 시작 시간] " + set.get(Calendar.DAY_OF_MONTH) + "일 " + set.get(Calendar.HOUR_OF_DAY) + ":" + set.get(Calendar.MINUTE), Toast.LENGTH_LONG).show();
         }
         //이용 시작 시간 값 제거
         else {
-            if(sh_Pref != null && sh_Pref.contains("Millis"))
-                toEdit.remove("Millis");
+            toEdit.remove("Millis");
         }
-        toEdit.commit();
+        toEdit.apply();
+
     }
 
     public void applySharedPreference() {
-        sh_Pref = mContext.getSharedPreferences("Time", MODE_PRIVATE);
         if (sh_Pref != null && sh_Pref.contains("Millis")) {
             //현재 시간 정보(이용 시간을 나타낼때 사용)
             final Calendar current = Calendar.getInstance();

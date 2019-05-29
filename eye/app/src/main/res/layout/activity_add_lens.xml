@@ -120,24 +120,24 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <ImageButton
+        <Button
             android:id="@+id/Button_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:background="@android:color/transparent"
-            android:scaleType="centerInside"
-            android:src="@drawable/okbtn"
+            android:background="@color/colorPrimary"
+            android:text="OK"
+            android:textSize="30dp"
+            android:textColor="#FFFFFF"
             android:layout_weight="1"/>
-        <ImageButton
+        <Button
             android:id="@+id/Button_cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/cancelbtn"
-            android:background="@android:color/transparent"
-            android:adjustViewBounds="true"
-            android:scaleType="centerInside"
-            android:layout_weight="1"/>
+            android:background="@color/colorPrimary"
+            android:text="CANCEL"
+            android:textSize="30dp"
+            android:layout_weight="1"
+            android:textColor="#FFFFFF"/>
     </LinearLayout>
 </LinearLayout>
 </ScrollView>
