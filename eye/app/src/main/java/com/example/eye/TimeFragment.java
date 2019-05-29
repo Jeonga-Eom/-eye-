@@ -66,6 +66,7 @@ public class TimeFragment extends Fragment {
                 }
                 else {
                     Toast.makeText(getActivity(), "팝업 알림 OFF", Toast.LENGTH_SHORT).show();
+                    toEdit.remove("state");
                     if(sh_Pref.getInt("alert", 0) == 1)
                         JobSchedulerStart.destroy();
                 }
