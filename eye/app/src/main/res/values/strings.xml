@@ -107,29 +107,29 @@
     <!--End of YangActivity-->
 
     <string-array name="reference_array">
-        <item>[MyLens: 렌즈미]www.lens-me.com </item>
-        <item>[MyLens: 오렌즈]www.o-lens.com </item>
-        <item>[MyLens: 알콘]https://www.ialcon.co.kr/</item>
-        <item>[MyLens: 클라렌]https://www.clalen.com/</item>
-        <item>[MyLens: 바슈롬]bausch.co.kr </item>
-        <item>[MyLens: 아큐브]www.acuvue.co.kr </item>
-        <item>[FAQ: 렌즈 종류, 관리방법]https://m.post.naver.com/viewer/postView.nhn?volumeNo=16279943&amp;memberNo=11770059&amp;vType=VERTICAL,
+        <item>[MyLens: 렌즈미] www.lens-me.com </item>
+        <item>[MyLens: 오렌즈] www.o-lens.com </item>
+        <item>[MyLens: 알콘] https://www.ialcon.co.kr/</item>
+        <item>[MyLens: 클라렌] https://www.clalen.com/</item>
+        <item>[MyLens: 바슈롬] bausch.co.kr </item>
+        <item>[MyLens: 아큐브] www.acuvue.co.kr </item>
+        <item>[FAQ: 렌즈 종류, 관리방법] https://m.post.naver.com/viewer/postView.nhn?volumeNo=16279943&amp;memberNo=11770059&amp;vType=VERTICAL,
             https://m.post.naver.com/viewer/postView.nhn?volumeNo=15782540&amp;memberNo=2928065 </item>
-        <item>[FAQ: 렌즈 종류]https://m.post.naver.com/viewer/postView.nhn?volumeNo=8236316&amp;memberNo=639132&amp;vType=VERTICAL</item>
-        <item>[FAQ: 렌즈 종류(컬러,투명)]https://m.post.naver.com/viewer/postView.nhn?volumeNo=17156318&amp;memberNo=2928065</item>
-        <item>[FAQ: 사용기간]https://m.post.naver.com/viewer/postView.nhn?volumeNo=17878115&amp;memberNo=2928065,
+        <item>[FAQ: 렌즈 종류] https://m.post.naver.com/viewer/postView.nhn?volumeNo=8236316&amp;memberNo=639132&amp;vType=VERTICAL</item>
+        <item>[FAQ: 렌즈 종류(컬러,투명)] https://m.post.naver.com/viewer/postView.nhn?volumeNo=17156318&amp;memberNo=2928065</item>
+        <item>[FAQ: 사용기간] https://m.post.naver.com/viewer/postView.nhn?volumeNo=17878115&amp;memberNo=2928065,
             https://m.post.naver.com/viewer/postView.nhn?volumeNo=16700358&amp;memberNo=2928065,
             https://m.post.naver.com/viewer/postView.nhn?volumeNo=1522208&amp;memberNo=2928065</item>
-        <item>[FAQ: 수면]https://m.post.naver.com/viewer/postView.nhn?volumeNo=16055637&amp;memberNo=2928065&amp;vType=VERTICAL</item>
-        <item>[FAQ: 물놀이]https://m.post.naver.com/viewer/postView.nhn?volumeNo=16055637&amp;memberNo=2928065&amp;vType=VERTICAL</item>
-        <item>[FAQ: 세척방법]https://m.post.naver.com/viewer/postView.nhn?volumeNo=19676220&amp;memberNo=2928065,
+        <item>[FAQ: 수면] https://m.post.naver.com/viewer/postView.nhn?volumeNo=16055637&amp;memberNo=2928065&amp;vType=VERTICAL</item>
+        <item>[FAQ: 물놀이] https://m.post.naver.com/viewer/postView.nhn?volumeNo=16055637&amp;memberNo=2928065&amp;vType=VERTICAL</item>
+        <item>[FAQ: 세척방법] https://m.post.naver.com/viewer/postView.nhn?volumeNo=19676220&amp;memberNo=2928065,
             https://m.post.naver.com/viewer/postView.nhn?volumeNo=16277390&amp;memberNo=2928065</item>
-        <item>[FAQ: 인공눈물]https://m.post.naver.com/viewer/postView.nhn?volumeNo=17600453&amp;memberNo=2928065,
+        <item>[FAQ: 인공눈물] https://m.post.naver.com/viewer/postView.nhn?volumeNo=17600453&amp;memberNo=2928065,
             https://m.post.naver.com/viewer/postView.nhn?volumeNo=1521945&amp;memberNo=2928065</item>
-        <item>[FAQ: 착용방법]https://m.post.naver.com/viewer/postView.nhn?volumeNo=16514482&amp;memberNo=2928065</item>
-        <item>[FAQ: 보관]https://m.post.naver.com/viewer/postView.nhn?volumeNo=9318794&amp;memberNo=2928065</item>
-        <item>[FAQ: 그래픽]https://m.post.naver.com/viewer/postView.nhn?volumeNo=9318794&amp;memberNo=2928065</item>
-        <item>[FAQ: 소재]https://blog.naver.com/olens_2dongtan/221152124356</item>
+        <item>[FAQ: 착용방법] https://m.post.naver.com/viewer/postView.nhn?volumeNo=16514482&amp;memberNo=2928065</item>
+        <item>[FAQ: 보관] https://m.post.naver.com/viewer/postView.nhn?volumeNo=9318794&amp;memberNo=2928065</item>
+        <item>[FAQ: 그래픽] https://m.post.naver.com/viewer/postView.nhn?volumeNo=9318794&amp;memberNo=2928065</item>
+        <item>[FAQ: 소재] https://blog.naver.com/olens_2dongtan/221152124356</item>
     </string-array>
 
 </resources>
