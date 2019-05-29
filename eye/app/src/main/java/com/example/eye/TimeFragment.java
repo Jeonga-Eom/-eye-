@@ -31,6 +31,7 @@ public class TimeFragment extends Fragment {
     //사용 시작한 시간 저장
     SharedPreferences sh_Pref;
     SharedPreferences.Editor toEdit;
+    final TimeThread thread = new TimeThread();
     int Hour;
     int Min;
 
@@ -45,7 +46,6 @@ public class TimeFragment extends Fragment {
         minText = rootView.findViewById(R.id.TextView_time_minutes);
 
         //이전 설정 시간이 있을 경우 timer 작동
-        final TimeThread thread = new TimeThread();
         thread.start();
 
         //팝업 알림 제어
@@ -172,9 +172,16 @@ public class TimeFragment extends Fragment {
             set.setTimeInMillis(sh_Pref.getLong("Millis", 0));
 
             long remain = current.getTimeInMillis() - set.getTimeInMillis();
+            if (remain >= 1000 * 60 * 60 * 24) {
+                sharedPrefernces(-1);
+                thread.interrupt();
+                Toast.makeText(getActivity(), "사용시간이 24시간이 넘어 초기화되었습니다.", Toast.LENGTH_LONG).show();
+            }
             //Toast.makeText(getActivity(), "현재: " + current.get(Calendar.HOUR_OF_DAY) + ":" + current.get(Calendar.MINUTE) + " 설정: " + set.get(Calendar.HOUR_OF_DAY) + ":" + set.get(Calendar.MINUTE) + " 남: " + remain / (1000 * 60 * 60) + ":" + remain % (1000 * 60 * 60) / (1000 * 60), Toast.LENGTH_SHORT).show();
-            hourText.setText("" + (remain / (1000 * 60 * 60)) % 24);
-            minText.setText("" + (remain / (1000 * 60)) % 60);
+            else {
+                hourText.setText("" + (remain / (1000 * 60 * 60)) % 24);
+                minText.setText("" + (remain / (1000 * 60)) % 60);
+            }
         }
     }
 }
