@@ -63,6 +63,9 @@ public class TimeFragment extends Fragment {
                 if(isChecked) {
                     Toast.makeText(getActivity(), "팝업 알림 ON", Toast.LENGTH_SHORT).show();
                     toEdit.putInt("state", 1);
+                    if(sh_Pref.getInt("alert", 0) == 0 && sh_Pref.contains("Millis")) {
+                        JobSchedulerStart.start(getActivity());
+                    }
                 }
                 else {
                     Toast.makeText(getActivity(), "팝업 알림 OFF", Toast.LENGTH_SHORT).show();
