@@ -5,15 +5,14 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 public class AddLensActivity extends AppCompatActivity {
     EditText name;
-    ImageButton add, cancel;
     RadioGroup group1, group2;
     RadioButton oneday1, twoweeks1, onemonth1, sixmonth1, oneday2, twoweeks2, onemonth2, sixmonth2;
 
@@ -23,8 +22,8 @@ public class AddLensActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_lens);
 
         name = findViewById(R.id.EditText_lens_name);
-        add = (ImageButton)findViewById(R.id.Button_add);
-        cancel = (ImageButton)findViewById(R.id.Button_cancel);
+        Button add = findViewById(R.id.Button_add);
+        Button cancel = findViewById(R.id.Button_cancel);
 
         //group left
         group1 = findViewById(R.id.RadioGroup_lens_left);
